@@ -1,9 +1,7 @@
 import torchvision.transforms as transforms
-import torch
 import numpy as np
 import os
 import cv2
-
 def convert_image_to_tensor(image):
     """convert an image to pytorch tensor
 
@@ -30,13 +28,7 @@ def convert_chwTensor_to_hwcNumpy(tensor):
             -------
             numpy array images: count * h * w * c
             """
-        # Variable已经被弃用，使用torch.no_grad()代替
-    with torch.no_grad():
-        tensor = tensor.cpu().float()
-        image = tensor.numpy()
-        image = np.transpose(image, (0, 2, 3, 1))
-        return image
-
+    return np.transpose(tensor.detach().numpy(), (0,2,3,1))
 
 class ImageDB(object):
     def __init__(self, image_annotation_file, prefix_path='', mode='train'):
