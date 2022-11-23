@@ -410,11 +410,11 @@ class MtcnnDetector(object):
         for i in range(boxes_align.shape[0]):
             if boxes_align[i][2]-boxes_align[i][0]<=3 or boxes_align[i][3]-boxes_align[i][1]<=3:
                 valindex[i]=False
-                print('pnet has one smaller than 3')
+                #print('pnet has one smaller than 3')
             else:
                 if boxes_align[i][2]<1 or boxes_align[i][0]>w-2 or boxes_align[i][3]<1 or boxes_align[i][1]>h-2:
                     valindex[i]=False
-                    print('pnet has one out')
+                    #print('pnet has one out')
         boxes_align=boxes_align[valindex,:]
         boxes = boxes[valindex,:]
         return boxes, boxes_align
@@ -729,7 +729,7 @@ class MtcnnDetector(object):
 
         # pnet
         if self.pnet_detector:
-            boxes, boxes_align = self.detect_pnet(img)
+            p_boxes, boxes_align = self.detect_pnet(img)
             if boxes_align is None:
                 return np.array([]), np.array([])
 
@@ -738,7 +738,7 @@ class MtcnnDetector(object):
 
         # rnet
         if self.rnet_detector:
-            boxes, boxes_align = self.detect_rnet(img, boxes_align)
+            r_boxes, boxes_align = self.detect_rnet(img, boxes_align)
             if boxes_align is None:
                 return np.array([]), np.array([])
 
@@ -755,4 +755,4 @@ class MtcnnDetector(object):
             t = time.time()
             print("time cost " + '{:.3f}'.format(t1+t2+t3) + '  pnet {:.3f}  rnet {:.3f}  onet {:.3f}'.format(t1, t2, t3))
 
-        return boxes_align, landmark_align
+        return p_boxes,r_boxes,boxes_align, landmark_align
