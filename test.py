@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument('--pnet_path', default="./model_store/pnet_epoch_20.pt",help='path to pnet model', type=str)
     parser.add_argument('--rnet_path', default="./model_store/rnet_epoch_20.pt",help='path to rnet model', type=str)
     parser.add_argument('--onet_path', default="./model_store/onet_epoch_20.pt",help='path to onet model', type=str)
-    parser.add_argument('--path', default="./mid.png",help='path to image', type=str)
+    parser.add_argument('--path', default="./img/mid.png",help='path to image', type=str)
     parser.add_argument('--min_face_size', default=MIN_FACE_SIZE,help='min face size', type=int)
     parser.add_argument('--use_cuda', default=False,help='use cuda', type=bool)
     parser.add_argument('--thresh', default='[0.1, 0.1, 0.1]',help='thresh', type=str)

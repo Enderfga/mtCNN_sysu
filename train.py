@@ -348,4 +348,4 @@ if __name__ == '__main__':
     args = parse_args()
     lr_epoch_decay = [9]
     train_net(annotation_file=args.annotation_file, model_store_path=args.model_store_path,
-                end_epoch=args.end_epoch, frequent=args.frequent, lr=args.lr,lr_epoch_decay=lr_epoch_decay,batch_size=args.batch_size, use_cuda=args.use_cuda,net=args.net)
+                end_epoch=args.end_epoch, frequent=args.frequent, lr=args.lr,lr_epoch_decay=lr_epoch_decay,batch_size=args.batch_size, use_cuda=args.use_cuda,load=args.load,net=args.net)
