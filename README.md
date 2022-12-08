@@ -86,7 +86,7 @@ python test.py --input_mode=0
 
 #### The result of  "--net=pnet"
 
-![](https://img.enderfga.cn/img/image-20221208155102864.png)
+![](https://img.enderfga.cn/img/20221208160900.png)
 
 #### The result of  "--net=rnet"
 
