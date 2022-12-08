@@ -11,13 +11,41 @@ We have implemented MTCNN using the pytorch framework. Pytorch is a popular deep
 ![](https://img.enderfga.cn/img/image-20221208152130975.png)
 
 ![](https://img.enderfga.cn/img/image-20221208152231511.png)
-
+## Description of file
+```shell
+├── README.md                      # explanatory document
+├── get_data.py                    # Generate corresponding training data depending on the input “--net”
+├── img                            # mid.png is used for testing visualization effects,other images are the corresponding results.
+│   ├── mid.png
+│   ├── onet.png
+│   ├── pnet.png
+│   ├── rnet.png
+│   ├── result.png
+│   └── result.jpg
+├── model_store                    # Our pre-trained model
+│   ├── onet_epoch_20.pt
+│   ├── pnet_epoch_20.pt
+│   └── rnet_epoch_20.pt
+├── requirements.txt               # Environmental version requirements
+├── test.py                        # Specify different "--net" to get the corresponding visualization results
+├── test.sh                        # Used to test mid.png, which will test the output visualization of three networks
+├── train.out                      # Our complete training log for this experiment
+├── train.py                       # Specify different "--net" for the training of the corresponding network
+├── train.sh                       # Generate data from start to finish and train
+└── utils                          # Some common tool functions and modules
+    ├── config.py
+    ├── dataloader.py
+    ├── detect.py
+    ├── models.py
+    ├── tool.py
+    └── vision.py
+```
 ## Requirements
 
-* numpy
-* matplotlib
-* opencv-python
-* torch
+* numpy==1.21.4
+* matplotlib==3.5.0
+* opencv-python==4.4.0.42
+* torch==1.13.0+cu116
 
 ## How to Install
 
