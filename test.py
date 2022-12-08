@@ -4,22 +4,22 @@ from utils.vision import vis_face
 import argparse
 
 
-MIN_FACE_SIZE = 24
+MIN_FACE_SIZE = 3
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Test MTCNN',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('--net', dest='net', help='which net to show', type=str)
+    parser.add_argument('--net', default='onet', help='which net to show', type=str)
     parser.add_argument('--pnet_path', default="./model_store/pnet_epoch_20.pt",help='path to pnet model', type=str)
     parser.add_argument('--rnet_path', default="./model_store/rnet_epoch_20.pt",help='path to rnet model', type=str)
     parser.add_argument('--onet_path', default="./model_store/onet_epoch_20.pt",help='path to onet model', type=str)
     parser.add_argument('--path', default="./mid.png",help='path to image', type=str)
     parser.add_argument('--min_face_size', default=MIN_FACE_SIZE,help='min face size', type=int)
     parser.add_argument('--use_cuda', default=False,help='use cuda', type=bool)
-    parser.add_argument('--thresh', default='[0.6, 0.7, 0.7]',help='thresh', type=str)
+    parser.add_argument('--thresh', default='[0.1, 0.1, 0.1]',help='thresh', type=str)
     parser.add_argument('--save_name', default="result.jpg",help='save name', type=str)
-    parser.add_argument('--input_mode', default=0,help='image or video', type=int)
+    parser.add_argument('--input_mode', default=1,help='image or video', type=int)
     args = parser.parse_args()
     return args
 if __name__ == '__main__':
@@ -80,3 +80,5 @@ if __name__ == '__main__':
         cap.release()
         out.release()
         cv2.destroyAllWindows()
+    
+

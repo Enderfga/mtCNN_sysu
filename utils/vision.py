@@ -34,9 +34,9 @@ def vis_face(im_array, dets, landmarks, face_size, save_name):
                              bbox[3] - bbox[1], fill=False,
                              edgecolor='red', linewidth=0.9)
         score = bbox[4]
-        plt.gca().text(bbox[0], bbox[1] - 2,
-                       '{:.5f}'.format(score),
-                       bbox=dict(facecolor='red', alpha=0.5), fontsize=8, color='white')
+        # plt.gca().text(bbox[0], bbox[1] - 2,
+        #                '{:.5f}'.format(score),
+        #                bbox=dict(facecolor='red', alpha=0.5), fontsize=8, color='white')
 
         pylab.gca().add_patch(rect)
 
@@ -49,5 +49,8 @@ def vis_face(im_array, dets, landmarks, face_size, save_name):
                 cir1 = Circle(xy=(landmarks_one[j, 0], landmarks_one[j, 1]), radius=face_size/12, alpha=0.4, color="red")
                 pylab.gca().add_patch(cir1)
 
-        pylab.savefig(save_name)
+        #pylab.savefig(save_name)
+        #只保存图片内容，不保存坐标轴
+        pylab.axis('off')
+        pylab.savefig(save_name, bbox_inches='tight', pad_inches=0.0)
         pylab.show()
