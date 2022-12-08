@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# mtcnn
-=======
 # Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks
 
 This repo contains the code, data and trained models for the paper [Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks](https://arxiv.org/ftp/arxiv/papers/1604/1604.02878.pdf).
@@ -98,4 +95,3 @@ python test.py --input_mode=0
 #### The result of  "--net=onet"
 
 ![](https://img.enderfga.cn/img/image-20221208155044451.png)
->>>>>>> 22eeb91 (last commit)
