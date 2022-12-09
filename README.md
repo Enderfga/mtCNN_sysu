@@ -1,6 +1,9 @@
 # Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks
 
 This repo contains the code, data and trained models for the paper [Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks](https://arxiv.org/ftp/arxiv/papers/1604/1604.02878.pdf).
+Try out the Gradio Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Enderfga/mtCNN_sysu)
+![](https://img.enderfga.cn/img/1faec03527783e6e8ee03d519e167aa.png)
+
 
 ## Overview
 
